@@ -19,7 +19,7 @@ abstract class AbstractProduct{
 /* BEGIN Concrete Products
   - Could be several concrete products for EACH abstract product */
 class Product1 extends AbstractProduct{
-	Product(String arg){
+	Product1(String arg){
 		System.out.println("Hello "+arg);
 	}
 	public void doSomething() {};
