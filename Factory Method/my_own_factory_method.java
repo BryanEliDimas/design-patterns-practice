@@ -57,12 +57,33 @@ public class ConcreteCreator extends Creator {
 //// END of concretions //
 /////////////////////////
 
+// This is the code we care about, but it is implicit in the documentation for this pattern
+// The client because it uses Creator
+// - the extensible part of the system
+// ---- EXTENSIBLE = POLYMORPHISM, not adding new methods
+// - easy to test
+public class BusinessLogic {
+  public BusinessLogic(Creator creator) { // this is the strategy pattern at play
+    // store creator
+  }
+
+  public void setCreator(Creator creator) { ... }
+
+  public void doWork() {
+    // some business logic
+    _creator.anOperation();
+    // some more business logic
+  }
+}
+
 
 public class Client {
   public static void main(String args[]) {
 
-    Creator creator = new ConcreteCreator(); // magic trick // extends Creator, where the cool useful operations exist
-    creator.anOperation(); // the cool useful operation exists in Creator (aka. Factory)
+    // magic trick // extends Creator, where the cool useful operations exist
+    Creator creator = new ConcreteCreator();
+    BusinessLogic app = new BusinessLogic(creator);
+    app.anOperation(); // the cool useful operation exists in Creator (aka. Factory)
 
   }
 }
