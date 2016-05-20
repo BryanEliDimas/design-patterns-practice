@@ -5,7 +5,9 @@
 /* BEGIN abstractions
   - 1 abstract factory but it could create several -different- abstract products */
 abstract class AbstractFactory{
-  abstract AbstractProduct createProduct();
+  // family of abstract products
+  abstract AbstractProduct createProduct(); // One type of Product, but there could be more
+  // ... more types of abstract products, if desired
 }
 
 abstract class AbstractProduct{
