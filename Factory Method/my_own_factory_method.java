@@ -1,6 +1,6 @@
 /* Factory Method design pattern
 
-Creator (abstract)    = declares the Factory Method + cool useful operations - it is what Client will work with
+Creator (abstract)    = declares the Factory Method
 Product (interface)   = just an abstraction, but could declare or implement behavior
 
 ConcreteCreator  = overrides the FactoryMethod, inherits the cool useful operations from Creator
@@ -18,14 +18,9 @@ FM-CaPiCC-i
 //// BEGIN abstractions ////
 //_______________________//
 
-public abstract class Creator { // the Factory // an abstraction // contains a bunch of cool useful operations
-  // knows about Product interface only, not ConcreteProduct-s
-  public void anOperation(){ // one cool useful operation // not usually overriden by a subclass
-    Product product = factoryMethod();
-    // ... some cool useful operation with a ConcreteProduct of Product here
-  }
-
-  protected abstract Product factoryMethod(); // <the> factoryMethod in Factory that subclasses must override
+public abstract class Creator { // the Factory // an abstraction
+  // <the> factoryMethod in Factory that subclasses must override to implement
+  protected abstract Product factoryMethod();
 }
 
 public interface Product {  }
@@ -44,7 +39,6 @@ public class ConcreteProduct implements Product {}
 
 public class ConcreteCreator extends Creator {
   // overrides the factoryMethod - to return a concrete product
-  // inherits cool useful operations from Creator
   // will be casted to its parent class Creator
 
   // ConcreteCreator knows about ConcreteProduct, but returns it as a Product
@@ -83,7 +77,7 @@ public class Client {
     // magic trick // extends Creator, where the cool useful operations exist
     Creator creator = new ConcreteCreator();
     BusinessLogic app = new BusinessLogic(creator);
-    app.anOperation(); // the cool useful operation exists in Creator (aka. Factory)
+    app.doWork(); // the cool useful operation exists in BusinessLogic
 
   }
 }
