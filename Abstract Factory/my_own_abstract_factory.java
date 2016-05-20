@@ -55,7 +55,10 @@ class ConcreteFactory2 extends AbstractFactory{
 /* END of Concrete Factories */
 
 // Factory creator - an indirect way of instantiating the factories
-class FactoryMaker{
+//// the Client
+// it could take an AbstractFactory as a strategy from the Application,
+//// but in this case FactoryMaker deals with all concretions by exposing static methods for object creation instead
+class FactoryMaker {
 	private static AbstractFactory;
 
 	static AbstractFactory getFactory1(){
@@ -67,10 +70,9 @@ class FactoryMaker{
 	}
 }
 
-// Client
-//// interacts only with abstractions
-//// thanks to FactoryMaker which deals with concretions and gives us abstractions
-public class Client{
+// Interacts only with abstractions
+// thanks to FactoryMaker which deals with concretions and gives us abstractions
+public class Application {
 	public static void main(String args[]){
 		AbstractFactory aff1 = FactoryMaker.getFactory1();
 		AbstractFactory aff2 = FactoryMaker.getFactory2();
