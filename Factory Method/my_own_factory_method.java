@@ -39,7 +39,7 @@ public class ConcreteProduct implements Product {}
 
 public class ConcreteCreator extends Creator {
   // overrides the factoryMethod - to return a concrete product
-  // will be casted to its parent class Creator
+  // will be cast to its parent class Creator
 
   // ConcreteCreator knows about ConcreteProduct, but returns it as a Product
   protected Product factoryMethod(){
@@ -52,7 +52,7 @@ public class ConcreteCreator extends Creator {
 /////////////////////////
 
 // This is the code we care about, but it is implicit in the documentation for this pattern
-// The client because it uses Creator
+// The client of Creator because it uses Creator
 // - the extensible part of the system
 // ---- EXTENSIBLE = POLYMORPHISM, not adding new methods
 // - easy to test
@@ -74,7 +74,7 @@ public class BusinessLogic {
 public class Client {
   public static void main(String args[]) {
 
-    // magic trick // extends Creator, where the cool useful operations exist
+    // magic trick // extends Creator
     Creator creator = new ConcreteCreator();
     BusinessLogic app = new BusinessLogic(creator);
     app.doWork(); // the cool useful operation exists in BusinessLogic
