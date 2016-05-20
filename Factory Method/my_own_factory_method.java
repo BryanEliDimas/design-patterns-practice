@@ -19,7 +19,7 @@ FM-CaPiCC-i
 //_______________________//
 
 public abstract class Creator { // the Factory // an abstraction // contains a bunch of cool useful operations
-  // knows about Product interface only, not ConcreteProduct's
+  // knows about Product interface only, not ConcreteProduct-s
   public void anOperation(){ // one cool useful operation // not usually overriden by a subclass
     Product product = factoryMethod();
     // ... some cool useful operation with a ConcreteProduct of Product here
