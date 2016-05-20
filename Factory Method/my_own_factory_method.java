@@ -71,7 +71,7 @@ public class BusinessLogic {
 }
 
 
-public class Client {
+public class Application {
   public static void main(String args[]) {
 
     // magic trick // extends Creator
