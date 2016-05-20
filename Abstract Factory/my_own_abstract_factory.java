@@ -18,7 +18,7 @@ abstract class AbstractProduct{
 /* END of abstractions */
 
 
-/* BEGIN Concrete Products
+/* BEGIN Concrete Product-s
   - Could be several concrete products for EACH abstract product */
 class Product1 extends AbstractProduct{
 	Product1(String arg){
@@ -35,7 +35,7 @@ class Product2 extends AbstractProduct{
 	public void doSomething() {};
 	public void doSomethingElse() {};
 }
-/* END of Concrete Product's */
+/* END of Concrete Product-s */
 
 
 /* BEGIN Concrete Factories
